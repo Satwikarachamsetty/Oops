@@ -1,0 +1,131 @@
+i.	Write a java program for the following: Create a class employee which takes input as name, id and designation and create an another class salary 
+which takes input as Basic pay (BP), House Rent Allowance (HRA), Dearness Allowance(DA) and Provident Found (PF) and inherits the members of class employee.
+Print the Net Pay of each employee using the reademp() in employee class and readsalary() , calculatesalary() and displayemp() methods in salary class.
+(np = bp + hra + da – pf)
+
+
+
+source code_______________________________________________________________________________________________________________________________________
+
+
+import java.util.Scanner;
+class employee{
+String name;
+String id;
+String designation;
+Scanner a=new Scanner(System.in);
+public void reademp()
+{
+System.out.println("enter the name of employee");
+name=a.nextLine();
+System.out.println("enter the id");
+id=a.nextLine();
+System.out.println("enter designation");
+designation=a.nextLine();
+}
+}
+class salary extends employee{
+Scanner b=new Scanner(System.in);
+int BP,HRA,DA,PF,np;
+void readsalary()
+{
+super.reademp();
+System.out.println("Enter the Basic Pay");
+BP=b.nextInt();
+System.out.println("Enter the House Rent Allowance");
+HRA=b.nextInt();
+System.out.println("Enter the Dearness Allowance");
+DA=b.nextInt();
+System.out.println("Enter the Provident Found");
+PF=b.nextInt();
+}
+void calculatesalary()
+{
+np=BP+HRA+DA-PF;
+}
+void displayemp()
+{
+System.out.println(" Enter name: "+name+", Enter id: "+id+", Enter designation: "+designation+", Net salary: "+np);
+}
+}
+class employeeDemo{
+public static void main(String args[]){
+int n;
+Scanner c=new Scanner(System.in);
+System.out.println("enter no of employees");
+n=c.nextInt();
+salary obj[]=new salary[n];
+for(int i=0;i<n;i++)
+{
+obj[i]=new salary();
+obj[i].readsalary();
+obj[i].calculatesalary();
+obj[i].displayemp();
+
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+output___________________________________
+
+
+enter no of employees
+3
+enter the name of employee
+sara
+enter the id
+1492
+enter designation
+MS
+Enter the Basic Pay
+50000
+Enter the House Rent Allowance
+25000
+Enter the Dearness Allowance
+10000
+Enter the Provident Found
+15000
+ Enter name: sara, Enter id: 1492, Enter designation: MS, Net salary: 70000
+enter the name of employee
+ram
+enter the id
+1469
+enter designation
+Btech
+Enter the Basic Pay
+20000
+Enter the House Rent Allowance
+5000
+Enter the Dearness Allowance
+3000
+Enter the Provident Found
+4000
+ Enter name: ram, Enter id: 1469, Enter designation: Btech, Net salary: 24000
+enter the name of employee
+anika
+enter the id
+9728
+enter designation
+Degree
+Enter the Basic Pay
+40000
+Enter the House Rent Allowance
+20000
+Enter the Dearness Allowance
+10000
+Enter the Provident Found
+30000
+ Enter name: anika, Enter id: 9728, Enter designation: Degree, Net salary: 40000
