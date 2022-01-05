@@ -1,0 +1,102 @@
+iii.	Write a java program for the following:
+employee is the parent class which is common for all the sub or child classes both the permanent_employee class and temporary_employee class. 
+Use the read_emp() method in employee class which reads the name, id and salary. And use the print_emp() method in both permanent_employee class and temporary_employee class
+which prints the details of name ,id and incremented salary details.(if employee is temporary then increment the salary  
+3.5% of the given salary and if employee is permanent then increment the  salary 5% of the given salary).
+
+
+program_____________________________________________
+
+
+import java.util.Scanner;
+class employee
+{
+String name;
+String id;
+double salary;
+void read_emp()
+{
+Scanner a=new Scanner(System.in);
+System.out.println("enter name of employee");
+name=a.nextLine();
+System.out.println("enter id");
+id=a.nextLine();
+System.out.println("enter salary");
+salary=a.nextDouble();
+}
+}
+class per_employee extends employee
+{
+void print_emp()
+{
+salary=salary+0.05*salary;
+System.out.println("Permanent employee");
+System.out.println("name : "+name);
+System.out.println("id: "+id);
+System.out.println("final salary of the permanent employee : "+salary);
+}
+}
+
+class temporary_employee extends employee
+{
+void print_emp()
+{
+salary=salary+0.035*salary;
+System.out.println("Temporary employee");
+System.out.println("name : "+name);
+System.out.println("id: "+id);
+System.out.println("final salary of the temporary employee : "+salary);
+}
+}
+class employee_Demo
+{
+public static void main(String args[])
+{
+int n;
+Scanner c=new Scanner(System.in);
+System.out.println("enter 1-permanent employee and 2-temporary employee");
+n=c.nextInt();
+if(n==1)
+{
+per_employee obj=new per_employee();
+obj.read_emp();
+obj.print_emp();
+}
+if(n==2)
+{
+temporary_employee obj1=new temporary_employee();
+obj1.read_emp();
+obj1.print_emp();
+}
+}
+}
+
+
+output___________________________________________________________________________
+enter 1-permanent employee and 2-temporary employee
+1
+enter name of employee
+zara
+enter id
+1492
+enter salary
+20000
+Permanent employee
+name : zara
+id: 1492
+final salary of the permanent employee : 21000.0
+
+
+enter 1-permanent employee and 2-temporary employee
+2
+enter name of employee
+sara
+enter id
+1469
+enter salary
+30000
+Temporary employee
+name : sara
+id: 1469
+final salary of the temporary employee : 31050.0
+
