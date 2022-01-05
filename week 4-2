@@ -1,0 +1,118 @@
+ii.	Write a java program for the following: 
+Assume that the test results of a batch of students are stored in three different classes. 
+Class student stores the name, roll-number and class test stores the marks obtained in six subjects and class result contains the total marks obtained in the test. 
+The class result can inherit the details of the marks obtained in the test and the name, roll number of students through Multi level inheritance.
+
+program______________________________________________________
+
+import java.util.Scanner;
+class student
+{
+Scanner a=new Scanner(System.in);
+String name;
+String rollno;
+void student()
+ {
+System.out.println("Enter name of the student");
+name=a.nextLine();
+System.out.println("enter roll no of the student");
+rollno=a.nextLine();
+}
+}
+
+
+class test extends student
+{
+Scanner b=new Scanner(System.in);
+int marks[]=new int[6];
+void test()
+{
+System.out.println("enter marks");
+for(int i=0;i<6;i++)
+{
+marks[i]=b.nextInt();
+}
+}
+}
+
+
+class result extends test
+{
+int total=0;
+void result()
+{
+  for(int i=0;i<6;i++)
+  {
+    total=total+marks[i];
+   }
+}
+  void display()
+  {
+    System.out.println("name: "+name +"rollno "+rollno+"total marks "+total);
+   }
+}
+
+
+class studentDemo{
+
+public static void main(String args[])
+ {
+   int n;
+   Scanner c=new Scanner(System.in);
+   System.out.println("enter no of employees");
+      n=c.nextInt();
+   result obj[]=new result[n];
+  for(int i=0;i<n;i++)
+  {
+   obj[i]=new result();
+   obj[i].student();
+   obj[i].test();
+   obj[i].result();
+  obj[i].display();
+  }
+ }
+}
+
+
+
+
+output________________________________________________
+
+enter no of employees
+3
+Enter name of the student
+zara
+enter roll no of the student
+1469
+enter marks
+25
+23
+24
+22
+21
+20
+name: zararollno 1469total marks 135
+Enter name of the student
+sara
+enter roll no of the student
+1492
+enter marks
+21
+20
+26
+23
+22
+25
+name: sararollno 1492total marks 137
+Enter name of the student
+ram
+enter roll no of the student
+1243
+enter marks
+22
+21
+23
+25
+26
+24
+name: ramrollno 1243total marks 141
