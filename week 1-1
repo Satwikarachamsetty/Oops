@@ -1,0 +1,77 @@
+
+
+
+
+
+
+
+program__________________________________________________________________________________________________________
+
+
+import java.util.Scanner;
+class details
+{
+float s;
+int hrs;
+String name;
+String id;
+float salary;
+int hours;
+public void getInfo()
+{
+Scanner a=new Scanner(System.in);
+System.out.println("enter name");
+name=a.nextLine();
+System.out.println("enter id");
+id=a.nextLine();
+System.out.println("enter salary");
+salary=a.nextFloat();
+System.out.println("enter no of hrs");
+hours=a.nextInt();
+System.out.println("name is-"+name);
+System.out.println("id is-"+id);
+System.out.println("salary is-"+salary);
+System.out.println("no of hrs is-"+hours);
+s=salary;
+hrs=hours;
+}
+public void AddSal()
+{
+if(s<500)
+{
+s=s+10;
+}
+}
+public void Addwork()
+{
+if(hrs>6)
+{
+s=s+5;
+}
+}
+public void display()
+{
+System.out.println("final_salary is-"+s);
+}
+}
+class employee
+{
+public static void main(String args[])
+{int m;
+Scanner n=new Scanner(System.in);
+m=n.nextInt();
+details[] obj=new details[m];
+for(int i=0;i<m;i++){
+System.out.println("test case"+(i+1));
+obj[i]=new details();
+obj[i].getInfo();
+obj[i].AddSal();
+obj[i].Addwork();
+obj[i].display();
+}
+}
+}
+
+
+output_________________________________________________________________________________________________________________________________________
+
