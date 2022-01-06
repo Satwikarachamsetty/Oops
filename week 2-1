@@ -1,0 +1,68 @@
+Week 2: static keyword, this keyword, variable length
+arguments.
+
+i. Write a java program to demonstarate a static keyword.
+
+program__________________________________________________________________________________________________________________________
+
+import java.util.Scanner;
+class Student
+{
+int rollno;
+String name;
+static String college="RVR";
+
+Student(int ad,String n)
+{
+rollno=ad;
+name=n;
+}
+
+static void change()
+{
+college="RVR&JC";
+
+}
+void display()
+{
+System.out.println(rollno+" "+name+" "+college);
+}
+static
+{
+System.out.println("student data");
+}
+}
+class main_Student{
+public static void main(String args[]){
+int p,s;
+String q,t;
+Scanner x=new Scanner(System.in);
+System.out.println("enter rollno1:");
+p=x.nextInt();
+System.out.println("enter name1:");
+q=x.next();
+System.out.println("enter rolln2:");
+s=x.nextInt();
+System.out.println("enter name2:");
+t=x.next();
+Student s1=new Student(p,q);
+Student s2=new Student(s,t);
+Student.change();
+s1.display();
+s2.display();
+}
+}
+
+output__________________________________________________________________________________________________________________
+
+enter rollno1:
+149
+enter name1:
+zara
+enter rolln2:
+127
+enter name2:
+sara
+student data
+149 zara RVR&JC
+127 sara RVR&JC
