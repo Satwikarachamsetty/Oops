@@ -1,0 +1,47 @@
+
+
+import java.util.*;
+abstract class shape
+{
+int x,y ;
+abstract void area(double x,double y);
+}
+class rectangle extends shape
+{
+void area(double x,double y)
+{
+System.out.println("Area of rectangle is :"+(x*y));
+}
+}
+class triangle extends shape
+{
+void area(double x,double y)
+{
+System.out.println("Area of triangle is :"+(0.5*x*y));
+}
+}
+class circle extends shape
+{
+void area(double x,double y)
+{
+System.out.println("Area of rectangle is :"+(3.14*x*x));
+}
+}
+class test6{
+public static void main(String args[])
+{
+rectangle r = new rectangle();
+r.area(3,5);
+triangle t = new triangle();
+t.area(2,4);
+circle c = new circle();
+c.area(7,7);
+}
+}
+
+
+output_________________________________________________________________________________________________________________
+
+Area of rectangle is :15.0
+Area of triangle is :4.0
+Area of rectangle is :153.86
