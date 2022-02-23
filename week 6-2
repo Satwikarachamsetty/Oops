@@ -1,0 +1,69 @@
+
+
+import java.util.*;
+interface student{
+String name = "Zara";
+int id = 973;
+String branch = "CSE";
+void getvalue();
+}
+class department implements student
+{
+int attendance;
+public void getAttendance()
+{
+Scanner a = new Scanner(System.in);
+System.out.println("enter attendance");
+attendance= a.nextInt();
+}
+public void getvalue()
+{
+System.out.println("Name is:"+name+"\nID is:"+id+"\nBranch is:"+branch);
+}
+}
+class exam extends department
+{
+public void cal_att()
+{
+attendance=attendance;
+}
+public boolean eligible()
+{
+if(attendance<75)
+{
+return false;
+}
+else
+{
+return true;
+}
+}
+}
+class test62
+{
+public static void main(String args[])
+{
+exam obj = new exam();
+obj.getvalue();
+obj.getAttendance();
+obj.cal_att();
+System.out.println("Eligibility :"+obj.eligible());
+}
+}
+
+
+output_______________________________________________________________
+1)
+Name is:Zara
+ID is:973
+Branch is:CSE
+enter attendance
+65
+Eligibility :false
+2)
+Name is:Zara
+ID is:973
+Branch is:CSE
+enter attendance
+80
+Eligibility :true
