@@ -1,0 +1,61 @@
+
+
+class Finalv{
+  final int a = 32;
+  void first()
+{
+a = 45;
+System.out.println("a is:"+a);
+}
+}
+class Finalm{
+final void second()
+{
+System.out.println("This is a final method");
+}
+}
+class Final extends Finalm
+{
+void second()
+{
+System.out.println("The final method is overrridden.");
+}
+}
+final class Finalc
+{
+Finalc()
+{
+System.out.println("This class declared with final");
+}
+}
+class Final1 extends Finalc
+{
+Final1()
+{
+System.out.println("This sub class of class Finalc");
+}
+}
+class A
+{
+public static void main(String args[]){
+Finalv v= new Finalv();
+v.first();
+Final m = new Final();
+m.second();
+Final1 c = new Final1();
+}
+}
+
+output______________________________________________________________________________________________________
+
+A.java:29: error: cannot inherit from final Finalc
+class Final1 extends Finalc
+                     ^
+A.java:5: error: cannot assign a value to final variable a
+a = 45;
+^
+A.java:17: error: second() in Final cannot override second() in Finalm
+void second()
+     ^
+  overridden method is final
+3 errors
