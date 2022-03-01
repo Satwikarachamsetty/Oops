@@ -1,0 +1,167 @@
+Source code:
+
+import java.util.*;
+import java.lang.*;
+class stringclass
+{
+stringclass()
+{
+Scanner a = new Scanner(System.in);
+System.out.println("enter a string");
+String s = a.nextLine();
+String s1 ="";
+String s2 = a.nextLine();
+System.out.println("Length of the string: "+s.length());
+System.out.println("Character of a string at index 3: "+s.charAt(3));
+System.out.println("String in Uppercase: "+s.toUpperCase());
+System.out.println("String in Lowercase: "+s.toLowerCase());
+System.out.println("Substring of given string:"+s.substring(3));
+System.out.println("Substring of string:"+s.substring(0,3));
+System.out.println("String contains the given substring: "+s.contains("hello"));
+System.out.println("Equal method on string: "+s.equals("hello"));
+System.out.println("String is empty or not: "+s1.isEmpty());
+System.out.println("Concatenating strings: "+s.concat(s2));
+System.out.println("Replacing of Hello with Hai: "+s.replace("hello","hai"));
+System.out.println("Comparing 2 strings ignoring case using equalignorecase method: "+s.equalsIgnoreCase("HELLO"));
+System.out.println("Comparing 2 strings using compareto method: "+s.compareTo("hello"));
+System.out.println("Splitting String");
+for(String i:s.split(" "))
+{
+System.out.println(i);
+}
+}
+}
+class stringbufferclass
+{
+stringbufferclass()
+{
+Scanner b = new Scanner(System.in);
+System.out.println("Enter string");
+String t = b.nextLine();
+StringBuffer tt = new StringBuffer(t);
+
+//Append Methods
+System.out.println("after appending string: "+tt.append(" world"));
+
+//Insert Methods
+System.out.println("Enter string");
+String t1 = b.nextLine();
+StringBuffer t11 = new StringBuffer(t1);
+System.out.println("After insertion string is: "+t11.insert(0,"java "));
+System.out.println("Enter string");
+String t2 = b.nextLine();
+StringBuffer t22 = new StringBuffer(t2);
+System.out.println("After replacing string is: "+t22.replace(0,5,"python"));
+
+//Delete methods
+System.out.println("Enter string");
+String t3 = b.nextLine();
+StringBuffer t33 = new StringBuffer(t3);
+System.out.println("After deleting, string is: "+t33.delete(1,4));
+
+//Reverse Methods
+System.out.println("Enter string");
+String t4 = b.nextLine();
+StringBuffer t44 = new StringBuffer(t4);
+System.out.println("After reversing string is: "+t44.reverse());
+
+//Capacity Method
+StringBuffer s55 = new StringBuffer();
+System.out.println(s55.capacity());
+s55.append("compiler");
+System.out.println(s55.capacity());
+s55.append("java is my favourite subject");
+System.out.println(s55.capacity());
+}
+}
+
+class strings
+{
+public static void main(String args[])
+{
+stringclass obj = new stringclass();
+stringbufferclass obj1 = new stringbufferclass();
+}
+}
+
+output_________________________________________________________
+
+enter a string
+case 1:
+// string output.............................
+hello
+anwita
+Length of the string: 5
+Character of a string at index 3: l
+String in Uppercase: HELLO
+String in Lowercase: hello
+Substring of given string:lo
+Substring of string:hel
+String contains the given substring: true
+Equal method on string: true
+String is empty or not: true
+Concatenating strings: helloanwita
+Replacing of Hello with Hai: hai
+Comparing 2 strings ignoring case using equalignorecase method: true
+Comparing 2 strings using compareto method: 0
+Splitting String
+hello
+// string buffer output........................
+Enter string
+hello
+after appending string: hello world
+Enter string
+script
+After insertion string is: java script
+Enter string
+hello
+After replacing string is: python
+Enter string
+hello
+After deleting, string is: ho
+Enter string
+hello
+After reversing string is: olleh
+16
+16
+36
+
+case 2:
+
+enter a string
+hello I'm
+Arya
+Length of the string: 9
+Character of a string at index 3: l
+String in Uppercase: HELLO I'M
+String in Lowercase: hello i'm
+Substring of given string:lo I'm
+Substring of string:hel
+String contains the given substring: true
+Equal method on string: false
+String is empty or not: true
+Concatenating strings: hello I'mArya
+Replacing of Hello with Hai: hai I'm
+Comparing 2 strings ignoring case using equalignorecase method: false
+Comparing 2 strings using compareto method: 4
+Splitting String
+hello
+I'm
+Enter string
+hello
+after appending string: hello world
+Enter string
+is oop language
+After insertion string is: java is oop language
+Enter string
+hi
+After replacing string is: python
+Enter string
+high
+After deleting, string is: h
+Enter string
+cjrvr
+After reversing string is: rvrjc
+16
+16
+36
