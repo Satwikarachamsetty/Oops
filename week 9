@@ -1,0 +1,35 @@
+import java.lang.*;
+import java.util.*;
+public class week9
+{
+public static void main(String args[])
+{
+try{
+Scanner a = new Scanner(System.in);
+System.out.println("enter the size of array");
+int n = a.nextInt();
+int arr[]= new int[n];
+if(n>0)
+{
+System.out.println("the number is: "+n);
+}
+}
+catch(NegativeArraySizeException e)
+{
+System.out.println(e);
+}
+}
+}
+
+output===================
+Z:\y20cs149>javac week9.java
+
+Z:\y20cs149>java week9
+enter the size of array
+4
+the number is: 4
+
+Z:\y20cs149>java week9
+enter the size of array
+-3
+java.lang.NegativeArraySizeException
