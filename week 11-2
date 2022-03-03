@@ -1,0 +1,26 @@
+import java.applet.Applet;
+import java.awt.*;
+public class fillcolor extends Applet{
+public void paint(Graphics g)
+{
+g.drawRect(150,150,150,150);
+g.setColor(Color.pink);
+g.fillRect(150,150,150,150);
+g.setColor(Color.yellow);
+g.drawString("Rectangle",50,100);
+}
+}
+/*<applet code ="fillcolor.class" width="300" height="300">
+
+</applet>*/  
+
+============running====================================
+
+Z:\y20cs149>javac fillcolor.java
+
+Z:\y20cs149>appletviewer fillcolor.java
+
+output================================================
+
+rectangle written in yellow color
+rectangle filled in pink.
