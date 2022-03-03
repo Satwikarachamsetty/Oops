@@ -1,0 +1,74 @@
+... Mthode 1 ... using one file ...
+File============================saving as useparam.java
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class useparam extends Applet
+{
+  public void paint(Graphics g)
+   {
+     int x = 0;
+     int y = 0;
+     x = Integer.parseInt(getParameter("xposition"));
+     y = Integer.parseInt(getParameter("yposition"));
+     String msg ="";
+     msg = getParameter("msg");
+     
+     g.drawString(msg,x,y);
+}
+}
+
+/*<applet code ="useparam.class" width="300" height="300">
+<param name="msg" value="This is a program for passing parameters using Applets."/>
+<param name="xposition" value="100"/>
+<param name="yposition" value="100"/>
+</applet>*/  
+
+------------------------running-------------------------------
+Z:\y20cs149>javac useparam.java
+
+Z:\y20cs149>appletviewer useparam.java
+-----------------------output-------------------------------
+This is a program for passing parameters using Applets.
+
+.....................................................................................................................................................
+
+...method 2 using 2 files.....................
+
+File 1===========================saving as useparam.java
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class useparam extends Applet
+{
+  public void paint(Graphics g)
+   {
+     int x = 0;
+     int y = 0;
+     x = Integer.parseInt(getParameter("xposition"));
+     y = Integer.parseInt(getParameter("yposition"));
+     String msg ="";
+     msg = getParameter("msg");
+     
+     g.drawString(msg,x,y);
+}
+}
+File 2====================================saving as useparam.html
+<html>
+<body>
+<applet code ="useparam.class" width="300" height="300">
+<param name="msg" value="This is a program for passing parameters using Applets."/>
+<param name="xposition" value="100"/>
+<param name="yposition" value="100"/>
+
+</applet> 
+</body>
+</html> 
+--------runnig--------------------------------
+
+Z:\y20cs149>javac useparam.java
+
+Z:\y20cs149>appletviewer useparam.html
+------------------output------------------
+
+This is a program for passing parameters using Applets.
