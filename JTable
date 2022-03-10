@@ -1,0 +1,21 @@
+//JAVA JTABLE EXAMPLE
+import javax.swing.*;
+public class test1{
+JFrame f;
+test1(){
+f = new JFrame();
+String data[][]={{"149","Sara","360000"},
+                {"972","Zara","480000"},
+                {"1552323","Raya","640000"}};
+String column[] = {"ID","NAME","SALARY"};
+JTable jt = new JTable(data,column);
+jt.setBounds(3,4,2,3);
+JScrollPane sp = new JScrollPane(jt);
+f.add(sp);
+f.setSize(300,400);
+f.setVisible(true);
+}
+public static void main(String args[]){
+new test1();
+}
+}
